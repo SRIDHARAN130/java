@@ -9,12 +9,14 @@ public class AtmCard
 	static long db_contact=6381275724L;
 	static long db_contact2;
 
-	public static void main(String[] args) throws Exception
+	public static void main(String[] args) throws Exception 
 	{
+		mainFuntion();
+	}
+	public static void mainFuntion()throws Exception {
+	System.out.println("\tSelect the Input");
 
-	System.out.println("\t\t\tSelect the Input ");
-
-	System.out.println("1.Change Pin\n2.Add Contact\n3.Details Of Account Holder");
+	System.out.println("1.Change Pin\n2.Add Contact\n3.Details Of Account Holder\n4.Exit");
 	
 	int button=sc.nextInt();
 	{
@@ -45,7 +47,7 @@ public class AtmCard
 	{
 		System.out.println("Please enter the second number");
 		db_contact2=sc.nextLong();
-		System.out.println("Number updated sucessfully: "+AtmDetails.db_contact2);
+		System.out.println("Number updated sucessfully: "+db_contact2);
 	}
 
 	else if (button==3)
@@ -53,14 +55,21 @@ public class AtmCard
 	System.out.println("Pin :"+db_atm_pin);
 	System.out.println("Contact :"+db_contact);
 	}
-
-	else if(button>3 || button<1)
+	else if (button==4)
 	{
+	System.out.println("THANK YOU, VISIT AGAIN");
+	}
+	else if(button>4 || button<1)
+	{
+		 wrongInput();		
+}	
+}
+}
+	public static void wrongInput() throws Exception {
 		System.out.println("Please select from the given option");
+		mainFuntion();
 		
-}
-}
-}
+	}	
 }
 
 
